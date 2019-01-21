@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.SeekBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import fr.wildcodeschool.mediaplayer.player.WildOnPlayerListener;
-import fr.wildcodeschool.mediaplayer.player.WildPlayer;
+import fr.wildcodescool.player.WildOnPlayerListener;
+import fr.wildcodescool.player.WildPlayer;
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
   // Audio player
