@@ -1,6 +1,5 @@
 package fr.wildcodeschool.mediaplayer;
 
-import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.Bundle;
@@ -27,18 +26,12 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
    * Application context accessor
    * https://possiblemobile.com/2013/06/context/
    */
-  private static Context appContext;
-  public  static Context getAppContext() {
-    return appContext;
-  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    // Initialization of the application context
-    MainActivity.appContext = getApplicationContext();
 
     // Initialization of the wild audio player
     mPlayer = new WildPlayer(this);

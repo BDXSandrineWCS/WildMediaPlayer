@@ -16,8 +16,6 @@ import static android.media.AudioManager.AUDIOFOCUS_REQUEST_GRANTED;
 import static android.media.AudioManager.STREAM_MUSIC;
 
 final public class WildAudioManager implements AudioManager.OnAudioFocusChangeListener {
-  // Instance of the WildAudioManager class
-  private static final WildAudioManager mInstance = new WildAudioManager();
 
   private AudioManager mAudioManager;
   private WildAudioManagerListener mListener;
@@ -31,21 +29,11 @@ final public class WildAudioManager implements AudioManager.OnAudioFocusChangeLi
   private AudioAttributes mAudioAttributes = null;
 
   /**
-   * Singleton accessor
-   * @return the unique instance of the class
-   */
-  public static WildAudioManager getInstance() {
-    return mInstance;
-  }
-
-  /**
    * Constructor
    */
-  private WildAudioManager() {
+  public WildAudioManager(Context context) {
     // Create audio manager
-    mAudioManager = (AudioManager)MainActivity
-      .getAppContext()
-      .getSystemService(Context.AUDIO_SERVICE);
+    mAudioManager = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
 
     // Define usage of audio request
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

@@ -19,12 +19,14 @@ public class WildPlayer implements WildAudioManagerListener {
   // media player prepared state
   private boolean isPrepared = false;
 
+  private WildAudioManager wildAudioManager;
+
   public WildPlayer(@NonNull Context ctx) {
     mContext = ctx;
     mPlayer  = new MediaPlayer();
-
+    wildAudioManager=new WildAudioManager(ctx);
     // Register to the audioManager events
-    WildAudioManager.getInstance().setAudioManagerListener(this);
+    wildAudioManager.setAudioManagerListener(this);
   }
 
   /**
@@ -68,7 +70,7 @@ public class WildPlayer implements WildAudioManagerListener {
    */
   public boolean play() {
     if (null != mPlayer && isPrepared && !mPlayer.isPlaying()) {
-      if (WildAudioManager.getInstance().requestAudioFocus()) {
+      if (wildAudioManager.requestAudioFocus()) {
         mPlayer.start();
         return true;
       }
@@ -138,7 +140,7 @@ public class WildPlayer implements WildAudioManagerListener {
   public void release() {
     if (null != mPlayer && isPrepared) {
       mPlayer.release();
-      WildAudioManager.getInstance().releaseAudioFocus();
+      wildAudioManager.releaseAudioFocus();
     }
   }
 
