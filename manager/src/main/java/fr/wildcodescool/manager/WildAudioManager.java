@@ -1,4 +1,4 @@
-package fr.wildcodeschool.mediaplayer.player.manager;
+package fr.wildcodescool.manager;
 
 import android.content.Context;
 import android.media.AudioAttributes;

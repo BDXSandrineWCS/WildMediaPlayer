@@ -22,11 +22,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
   private final Handler mSeekBarHandler = new Handler();
   private Runnable mSeekBarThread;
 
-  /**
-   * Application context accessor
-   * https://possiblemobile.com/2013/06/context/
-   */
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

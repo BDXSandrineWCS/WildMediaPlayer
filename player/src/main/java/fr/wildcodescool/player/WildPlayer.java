@@ -8,8 +8,8 @@ import android.util.Log;
 
 import java.io.IOException;
 
-import fr.wildcodeschool.mediaplayer.player.manager.WildAudioManager;
-import fr.wildcodeschool.mediaplayer.player.manager.WildAudioManagerListener;
+import fr.wildcodescool.manager.WildAudioManager;
+import fr.wildcodescool.manager.WildAudioManagerListener;
 
 public class WildPlayer implements WildAudioManagerListener {
   // Activity context
